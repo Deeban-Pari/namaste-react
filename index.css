@@ -37,14 +37,18 @@
 
 .filter{
     padding: 10px ;
+    display: flex;
 }
 
 .filter-btn{
     border-radius: 5px;
-    height: 40px;
-    background-color:black;
-    color: whitesmoke;
+    padding: 0 30px;
+    height: 35px;
     cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 8px;
+    margin-top: 13px;
 }
 
 .res-card-img{
@@ -56,4 +60,48 @@
     flex-wrap: wrap; /* Allow items to wrap to the next row */
     justify-content: space-between; /* Distribute items evenly across the container */
     margin-top: 20px;
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card{
+    width: 17.1%;
+    height: 400px;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+
+.login{
+    margin-top: 6px;
+    margin-right: -20px;
+    padding: 0 30px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 8px;
+}
+
+.search{
+    padding: 10px 20px;
+    padding-left: 150px;
+}
+
+.search-box{
+    height: 100%;
+    border-radius: 5px;
+}
+
+.search-btn{
+    justify-content: space-between;
+    margin-left: 10px;
+    padding: 0 30px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 8px;
 }
