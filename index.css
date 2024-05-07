@@ -1,65 +1,119 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    align-items: center;
+    background-color: #ff7433;
+    color: #ffffff;
+    padding: 10px 20px;
+    height: 60px;
 }
 
-.logo{
-    width: 120px;
-    cursor: pointer;
+.logo {
+    width: 80px;
+}
+
+.nav-items {
+    padding: 0px 20px;
 }
 
 .nav-items > ul{
+    font-size: 24px; 
     display: flex;
-    font-size: 24px;
+    align-items: center;
     list-style-type: none;
-    margin-right: 140px;
 }
 
 .nav-items > ul > li{
     padding: 10px;
     margin: 10px;
-    padding: 0px 25px;
 }
 
-.res-card{
-    padding: 5px;
-    width: calc(20% - 10px); /* 25% width for 4 cards per row with padding */
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    word-wrap: break-word
-}
-
-.res-card:hover{
-    border: 1px solid black;
+.nav-items > ul > li:hover {
     cursor: pointer;
 }
 
-.filter{
-    padding: 10px ;
+.res-card {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px 7px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 400px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.filter-btn{
-    border-radius: 5px;
-    padding: 0 30px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #2196F3;
-    color: white;
-    border-radius: 8px;
-    margin-top: 13px;
+.res-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+}
+
+.res-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.res-card h4 {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #666;
 }
 
 .res-card-img{
     width: 100%;
 }
 
-.res-container{
+.res-container {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: space-between; /* Distribute items evenly across the container */
-    margin-top: 20px;
+    flex-wrap: wrap;
+    padding-left: 115px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.filter-btn h4 {
+    color: #fff;
+}
+
+.filter-btn {
+    background-color: #ff7433;
+    height: 40px;
+    border: #ff7433 solid;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter .input-box {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ff7433;
+    border-radius: 5px;
+    width: 200px;
+    margin: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.filter .user-search {
+    color: #ff7433;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 40px;
+    font-weight: bold;
 }
 
 .shimmer-container{
@@ -75,33 +129,62 @@
 }
 
 .login{
-    margin-top: 6px;
-    margin-right: -20px;
-    padding: 0 30px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #2196F3;
-    color: white;
-    border-radius: 8px;
-}
-
-.search{
-    padding: 10px 20px;
-    padding-left: 150px;
-}
-
-.search-box{
-    height: 100%;
+    font-size: 20px;
+    background-color: #fff;
+    color: #ff7433;
+    border: none;
     border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.search {
+    padding: 10px;
+}
+
+.search-box {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ff7433;
+    border-radius: 5px;
+    width: 400px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.search-box:focus {
+    border-color: #ff7433; 
 }
 
 .search-btn{
-    justify-content: space-between;
-    margin-left: 10px;
-    padding: 0 30px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #2196F3;
+    padding: 11px 40px;
+    font-size: 16px;
+    background-color: #ff7433; 
     color: white;
-    border-radius: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    .res-card {
+        width: 100%;
+    }
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
 }

@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -32,7 +33,7 @@ const Body = () => {
                 "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
             );
             const json = await data.json();
-            console.log(json);
+            //console.log(json);
             
             // Extract the array of restaurants from the API response
             // This last line '||' is an 'OR' operator.
@@ -44,8 +45,8 @@ const Body = () => {
             setlistOfResturants(restaurants);
             setFilteredResturants(filtered)
             setLoading(false);
-            console.log(restaurants);
-            console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.name);
+            //console.log(restaurants);
+            //console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.name);
         } catch (error) {
             console.error("Error fetching data:", error);
             setLoading(false);
@@ -66,7 +67,7 @@ const Body = () => {
                     <button className="search-btn" onClick={()=>{
                         //Filter by search on restaurant cards and update the UI
                         //Search text. Here we need the value of search text which we type from inputbox. We need to bind it. So maintain a local variable and track it.
-                        console.log(searchText);
+                        //console.log(searchText);
                         const filteredResturants = listOfResturants.filter((res)=> res.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilteredResturants(filteredResturants);
                     }}>Search</button>
@@ -82,7 +83,13 @@ const Body = () => {
             <div className="res-container">
             {/* Using Map to iterate to array. Don't forget to include Key most important */}
                 {filteredResturants.map((restaurant) => (
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                //     <div key={restaurant.info.id} className="res-card">
+                //     <Link to={"/restaurants/" + restaurant.info.id}>
+                //         <RestaurantCard resData={restaurant} />
+                //     </Link>
+                // </div>
+                    //<RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                    <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
                 ))}
             </div>
         </div>
