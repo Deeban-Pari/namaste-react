@@ -21,7 +21,8 @@ const RestaurantMenu=()=>{
     //console.log(resInfo?.cards[1]?.card?.card?.gridElements.infoWithStyle.restaurants[1].info);
     //console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards);
      const{itemCards}=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[2]?.card?.card;
-    //console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[2]?.card?.card);
+    console.log(resInfo?.cards[4]?.groupedCard?.cardGrouspMap?.REGULAR.cards[2]?.card?.card);
+
     return (
         <div className="menu">
             <h1>{name}</h1>
